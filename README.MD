@@ -40,3 +40,7 @@ pipreqs . --force (rewrite exisiting)
 - Flask-login 
 
 ### Chapter 6: Profile Page
+
+### Chapter 7: Error Handling
+Fake email server that prints to terminal by opening a second terminal and running this bad boy:
+- python -m smtpd -n -c DebuggingServer localhost:8025
