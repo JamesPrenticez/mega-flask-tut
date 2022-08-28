@@ -1,5 +1,6 @@
 https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world
 
+
 Commands
 -----------------------------------
 python3 -m venv venv
@@ -33,4 +34,6 @@ pipreqs . --force (rewrite exisiting)
   - exit()
 
 ---
-### Chatper 5: User Logins
+### Chapter 5: User Logins
+- Password hashing with (wekzeug)[https://werkzeug.palletsprojects.com/en/2.2.x/] a core dependancy of flask
+- 
