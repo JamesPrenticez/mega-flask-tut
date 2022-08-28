@@ -36,4 +36,7 @@ pipreqs . --force (rewrite exisiting)
 ---
 ### Chapter 5: User Logins
 - Password hashing with (wekzeug)[https://werkzeug.palletsprojects.com/en/2.2.x/] a core dependancy of flask
-- 
+
+- Flask-login 
+
+### Chapter 6: Profile Page
