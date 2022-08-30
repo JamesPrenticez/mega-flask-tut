@@ -46,3 +46,7 @@ Fake email server that prints to terminal by opening a second terminal and runni
 - python -m smtpd -n -c DebuggingServer localhost:8025
 
 ### Chapter 8: Followers & Unit testing
+
+### Chapter 9: Pagination
+https://www.youtube.com/watch?v=hkL9pgCJPNk
+https://flask-sqlalchemy.palletsprojects.com/en/2.x/api/?highlight=pagination

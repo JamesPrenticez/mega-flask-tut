@@ -2,7 +2,54 @@
 
 {% block content %}
     <h1>Hi, {{ current_user.username }}!</h1>
-    {% for post in posts %}
-    <div><p>{{ post.author.username }} says: <b>{{ post.body }}</b></p></div>
+    {% if form %}
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.post.label }}<br>
+            {{ form.post(cols=32, rows=4) }}<br>
+            {% for error in form.post.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+    {% endif %}
+
+    {% for post in pages.items %}
+      {% include '_post.html' %}
     {% endfor %}
+
+    <div id="pages_container">
+
+      <input 
+        type=button
+        onClick="location.href='{{ prev_url }}'"
+        value='Prev'
+        {{ "disabled" if prev_url == None }}
+      >
+
+      {% for page in pages.iter_pages(left_edge=2, right_edge=2, left_current=2, right_current=5) %}
+        {% if page %}
+          {% if page != pages.page %}
+            <a href="{{ url_for(title, page=page) }}">{{ page }}</a>
+          {% else %}
+            <strong style="color:red">{{ page }}</strong>
+          {% endif %}
+        {% else %}
+          <span>…</span>
+        {% endif %}  
+      {% endfor %}
+
+      <input 
+        type=button
+        onClick="location.href='{{ next_url }}'"
+        value='Next'
+        {{ "disabled" if next_page == None }}
+      >
+
+
+
+    </div>
+
 {% endblock %}
